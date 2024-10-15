@@ -43,67 +43,7 @@
 
     <main>
       <h3 class="title-cart">Giỏ hàng của bạn</h3>
-      <h4>Bạn đang có 4 sản phẩm trong cửa hàng</h4>
-      <!-- Product Cart Table -->
-      <section class="cart-section">
-          <table class="cart-table">
-              <thead>
-                  <tr>
-                      <th>Sản phẩm</th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
-                      <th>Tổng</th>
-                      <th>Thực hiện</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td class="infor-product">
-                        <img src="https://product.hstatic.net/200000263355/product/568ca5b1-c395-423a-a8dd-bba7f53959ca_fc19499f14f24a5594931ff69b000b41_medium.jpg" alt="Product 1">
-                        <div class="inner-infor-product">
-                          <p>Thẻ tên inox dành cho thú cưng </p>
-                        </div>
-                      </td>
-                      
-                      <td>$25.00</td>
-                      <td>
-                          <button class="decrement-btn">-</button>
-                          <input type="number" value="1" class="quantity-input">
-                          <button class="increment-btn">+</button>
-                      </td>
-                      <td>$25.00</td>
-                      <td><button class="delete-btn">Delete</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="infor-product">
-                      <img src="https://product.hstatic.net/200000263355/product/hzqu7821_84244effd59d4945844e03dfccf9e337_medium.jpg" alt="Product 1">
-                      <div class="inner-infor-product">
-                        <p>Thẻ tên inox dành cho thú cưng </p>
-                      </div>
-                    </td>
-                    
-                    <td>$35.00</td>
-                    <td>
-                        <button class="decrement-btn">-</button>
-                        <input type="number" value="1" class="quantity-input">
-                        <button class="increment-btn">+</button>
-                    </td>
-                    <td>$35.00</td>
-                    <td><button class="delete-btn">Delete</button></td>
-                </tr>
-                  
-                  <!-- Add more products as needed -->
-              </tbody>
-          </table>
-
-
-          
-          <div class="cart-summary">
-              <p>Tổng giá: <span>55.00</span></p>
-              <a class="checkout-btn" href="checkout.aspx">Thanh toán</a>
-          </div>
-      </section>
+      <div runat="server" id="list_product_info"></div>
 
       
   </main>

@@ -44,7 +44,9 @@
 
 .cart-summary {
     margin-top: 20px;
-    text-align: right;
+    justify-content: space-between;
+    display: flex;
+}
 }
 
 .cart-summary p {
@@ -77,3 +79,4 @@
     margin-left: 20px;
     text-align: left;
 }
+

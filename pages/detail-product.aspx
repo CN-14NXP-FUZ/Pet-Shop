@@ -42,58 +42,7 @@
 
 
     <main>
-        <div class="detail-product">
-            <div class="product-gallery">
-                <!-- Product image slider or gallery -->
-                 <!-- add sider -->
-                 
-                <img src="https://product.hstatic.net/200000263355/product/568ca5b1-c395-423a-a8dd-bba7f53959ca_fc19499f14f24a5594931ff69b000b41_master.jpg" alt="Product Image">
-                <!-- Add more images if needed -->
-                <div class="product-thumbnails">
-                    <img src="https://product.hstatic.net/200000263355/product/z4521006890849_3a23389a622c6f2915d982052009610b_d4150df1b2264c6aa9c1c4800a5e68f3_compact.jpg" alt="Product Thumbnail">
-                    <img src="https://product.hstatic.net/200000263355/product/z4521006871099_6d23d4e84a9efa9cd5a4c65bee1afc02_3714a042021f4621aebeeb7228879ce1_compact.jpg" alt="Product Thumbnail">
-                    <img src="https://product.hstatic.net/200000263355/product/z4521009810612_edc644bfa433ffd77cf62fa90323f5e6_a9a73aa4ff7249fa9f9d00c3f8a4c077_compact.jpg" alt="Product Thumbnail">
-                </div>
-            </div>
-    
-            <div class="product-info">
-                <h1 class="product-name">Thẻ tên inox dành cho Thú cưng</h1>
-                <p class="product-code">Mã sản phẩm: 10000696</p>
-                <p class="product-status">Tình trạng: Còn hàng</p>
-
-                <div class="product-price">
-                    <span class="price-old">120,000₫</span>
-                    <span class="price-new">59,000₫</span>
-                    <span class="price-discount">-51%</span>
-                </div>
-    
-                <div class="product-options">
-                    <label for="color">Màu sắc:</label>
-                    <select id="color" name="color">
-                        <option>Thẻ tên inox</option>
-                        <option>Hộp Mozzi</option>
-                    </select>
-                </div>
-
-                <div class="quantity-box"> 
-                    <button class="quantity-btn">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="quantity-btn">+</button>
-                </div>
-    
-                <div class="add-to-cart">
-                    <button class="add-cart-btn">Thêm vào giỏ</button>
-                </div>
-    
-                <div class="product-details">
-                    <h3>Thông tin sản phẩm</h3>
-                    <p>Chất liệu inox cao cấp ...</p>
-                    <p>Chất liệu sản phẩm:
-
-                        Thẻ tên được làm từ chất liệu inox cao cấp, không gỉ, đảm bảo độ bền và sáng bóng trong suốt thời gian sử dụng. Chất liệu này an toàn cho thú cưng và không gây kích ứng.</p>
-                </div>
-            </div>
-        </div>
+        <div runat="server" id="productDetail"></div>
 
         <section class="product-relate">
             <div  class="title-section">
@@ -195,6 +144,7 @@
       </footer>
       
 
+    <script src="../assets/script/detail-product.js"></script>
     
 </body>
 </html>

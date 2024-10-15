@@ -16,8 +16,18 @@ namespace Pet_Shop.pages
             List<Product> products = Application.Get(Global.LIST_PRODUCT) as List<Product>;
             product_list_sale.InnerHtml = LoadData.LoadProduct("sale", 4, products, "SẢN PHẨM ĐANG SALE");
             product_list_new.InnerHtml = LoadData.LoadProduct("new", 4, products, "SẢN PHẨM MỚI VỀ");
+
             //số lượng sản phẩm trong giỏ hàng
-            numOfProduct.InnerHtml = "<p>" + (Session[Global.LIST_SHOPPING_CART] as List<CartItem>).Count + "</p>";
+            List<CartItem> carts = (List<CartItem>)Application[Global.LIST_CART] ;
+            int currNum = 0;
+            CartItem currCart = (Session[Global.YOUR_CART] as CartItem);
+
+            numOfProduct.InnerHtml = "<p>" + 0 + "</p>";
+            if (currCart.ListProduct != null && currCart.ListProduct.Count != 0)
+            {
+                numOfProduct.InnerHtml = "<p>" + currCart.ListProduct.Count() + "</p>";
+            }
+            
 
             // giao diện khi đã đăng nhập và chưa đăng nhập
             string customerName = "";
@@ -28,6 +38,21 @@ namespace Pet_Shop.pages
                 customerName = Session[Global.USER_NAME].ToString();
                 user_id = Session[Global.USER_ID].ToString();
                 info_curr_user = LoadData.LoadUser(customerName, user_id);
+
+                if (carts != null)
+                {
+                    (Session[Global.YOUR_CART] as CartItem).UserId =  Session[Global.USER_ID].ToString();
+
+                    foreach (CartItem cart in carts)
+                    {
+                        if (cart.UserId == Session[Global.USER_ID])
+                        {
+                            numOfProduct.InnerHtml = "<p>" + cart.ListProduct.Count() + "</p>";
+                            Session[Global.YOUR_CART] = cart;
+                            break;
+                        }
+                    }
+                }
             }
             infor_user.InnerHtml = info_curr_user;
 

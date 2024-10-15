@@ -7,12 +7,42 @@ namespace Pet_Shop.model
 {
     public class CartItem
     {
-        public string CartItemId { get; set; } 
-        public string CartId { get; set; }
-        public string ProductId { get; set; }
-        public string ProductType { get; set; } 
-        public int Quantity { get; set; } 
-        public decimal Price { get; set; } 
+        private string id;
+        private string userId;
+        private Dictionary<string, int> listProduct;
+       
+        public CartItem(string id, Dictionary<string, int> listProduct, string userId )
+        {
+            this.id = id;
+            this.listProduct = listProduct;
+            this.userId = userId;
+        }
+        public CartItem(string id, Dictionary<string, int> listProduct)
+        {
+            this.id = id;
+            this.listProduct = listProduct;
+        }
+        public CartItem(string id)
+        {
+            this.id = id;
+        }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
+
+        public Dictionary<string, int> ListProduct
+        {
+            get { return listProduct; }
+            set { listProduct = value; }
+        }
     }
 
 }
