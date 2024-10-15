@@ -78,6 +78,6 @@
       </footer>
       
 
-    
+    <script src="../assets/script/edit-cart.js"></script>
 </body>
 </html>

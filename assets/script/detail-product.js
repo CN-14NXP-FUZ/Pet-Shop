@@ -26,11 +26,8 @@ if (btnAddToCart) {
         inputQuantity.value = quantity;
         form.appendChild(inputQuantity);
 
-
         document.body.appendChild(form);
         form.submit();
-
-
     });
 }
 
@@ -57,6 +54,8 @@ if (increaseButton) {
         if (currentValue < max) {
             currentValue++;
             quantityInput.value = currentValue;
+        } else {
+            alert('Số lượng tối đa !');
         }
     });
 }

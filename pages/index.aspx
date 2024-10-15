@@ -111,9 +111,6 @@
 
         </div>
 
-
-
-
         <div class="thumb-bottom">
             <img src="https://theme.hstatic.net/200000263355/1001161916/14/home_collection_5_image.jpg?v=115" alt="">
         </div>
@@ -125,7 +122,7 @@
               <div class="inner-item">
                 <img src="https://file.hstatic.net/200000263355/article/lam_the_nao_diet_bo_chet_trong_nha_d69e5c802fec4fa4b793ee484e5bb5c9_small.png" alt="Article Image">
                 <div class="info-item">
-                  <p class="title">Làm thế nào để hết bỏ chết trong nhà?</p>
+                  <p class="title">Làm thế nào để hết bò chết trong nhà?</p>
                   <p class="date-article">11/12/2023</p>
                 </div>
               </div>

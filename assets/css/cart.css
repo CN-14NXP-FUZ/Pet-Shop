@@ -46,6 +46,7 @@
     margin-top: 20px;
     justify-content: space-between;
     display: flex;
+    align-items: center;
 }
 }
 
@@ -80,3 +81,8 @@
     text-align: left;
 }
 
+
+.update-btn {
+    background-color: #433878;
+    color: white;
+}

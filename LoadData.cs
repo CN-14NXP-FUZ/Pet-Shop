@@ -165,66 +165,72 @@ namespace Pet_Shop
 
         public static string LoadCart(CartItem cart, List<Product> listProduct)
         {
-            int numOfProduct = cart.ListProduct.Count;
-            string listProductHtml = "";
-            double totalPrice = 0;
-            Dictionary<string, int> list = cart.ListProduct;
-            foreach (KeyValuePair<string, int> item in list)
+            int numOfProduct = 0;
+            if (cart.ListProduct != null && cart.ListProduct.Count != 0)
             {
-                foreach (Product product in listProduct)
+                numOfProduct = cart.ListProduct.Count;
+                string listProductHtml = "";
+                double totalPrice = 0;
+                Dictionary<string, int> list = cart.ListProduct;
+                foreach (KeyValuePair<string, int> item in list)
                 {
-                    if (product.Id == item.Key)
+                    foreach (Product product in listProduct)
                     {
-                        double newPrice = Convert.ToDouble(product.Price) * (1.00 - product.Discount / 100.0);
-                        totalPrice += newPrice * item.Value;
-                        listProductHtml += $@"<tr>
-                            <td class='infor-product'>
-                                <img src='{product.ImageUrl}' alt='Product 1'>
-                                <div class='inner-infor-product'>
-                                    <p>{product.Name}</p>
-                                </div>
-                            </td>
-                            <td>${newPrice}</td>
-                            <td>
-                                <button class='decrement-btn'>-</button>
-                                <input type='number' value='{item.Value}' class='quantity-input'>
-                                <button class='increment-btn'>+</button>
-                            </td>
-                            <td>${newPrice * item.Value}</td>
-                            <td><button class='delete-btn'>Delete</button></td>
-                            </tr>";
+                        if (product.Id == item.Key)
+                        {
+                            double newPrice = Convert.ToDouble(product.Price) * (1.00 - product.Discount / 100.0);
+                            totalPrice += newPrice * item.Value;
+                            listProductHtml += $@"<tr data-product-id='{product.Id}'>
+                                    <td class='infor-product' >
+                                        <img src='{product.ImageUrl}' alt='Product 1'>
+                                        <div class='inner-infor-product'>
+                                            <p>{product.Name}</p>
+                                        </div>
+                                    </td>
+                                    <td>${newPrice}</td>
+                                    <td>
+                                        <button class='btn-decrease' data-product-id='{product.Id}'>-</button>
+                                        <input type='number' value='{item.Value}' class='quantity-input' data-product-id='{product.Id}' max='{product.Stock}'>
+                                        <button class='btn-increase' data-product-id='{product.Id}'>+</button>
+                                    </td>
+                                    <td>${newPrice * item.Value}</td>
+                                    <td><button class='delete-btn' data-product-id='{product.Id}'>Delete</button></td>
+                                </tr>";
+                        }
                     }
                 }
-                
+                string html = $@"
+                            <h4>Bạn đang có {numOfProduct} sản phẩm trong cửa hàng</h4>
+                          <!-- Product Cart Table -->
+                          <section class=""cart-section"">
+                              <table class=""cart-table"">
+                                  <thead>
+                                      <tr>
+                                          <th>Sản phẩm</th>
+                                          <th>Giá</th>
+                                          <th>Số lượng</th>
+                                          <th>Tổng</th>
+                                          <th>Thực hiện</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody class='list-product-item'>
+                                      {listProductHtml}
+                                      <!-- Add more products as needed -->
+                                  </tbody>
+                              </table>
+
+                              <div class=""cart-summary"">
+                                  <p style='marin-bottom: 10px;'>Tổng giá: <span>{totalPrice}</span></p>
+                                  <div style='display: flex;'>
+                                      <button class='checkout-btn update-btn'>Cập nhật</button>
+                                      <a class=""checkout-btn"" href=""checkout.aspx"" style='margin-left: 10px'>Thanh toán</a>
+                                  </div>
+                              </div>
+                          </section>";
+                return html;
             }
-            string html = $@"
-        <h4>Bạn đang có {numOfProduct} sản phẩm trong cửa hàng</h4>
-      <!-- Product Cart Table -->
-      <section class=""cart-section"">
-          <table class=""cart-table"">
-              <thead>
-                  <tr>
-                      <th>Sản phẩm</th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
-                      <th>Tổng</th>
-                      <th>Thực hiện</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {listProductHtml}
-                  <!-- Add more products as needed -->
-              </tbody>
-          </table>
-
-
-          
-          <div class=""cart-summary"">
-              <p style='marin-bottom: 10px;'>Tổng giá: <span>{totalPrice}</span></p>
-              <a class=""checkout-btn"" href=""checkout.aspx"">Thanh toán</a>
-          </div>
-      </section>";
-            return html;
+            
+            return $@"<h4 style='text-align: center; font-size: 20px;'>Bạn chưa có sản phẩm nào trong cửa hàng</h4>";
         }
 
     }

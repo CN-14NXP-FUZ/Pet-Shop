@@ -2539,10 +2539,12 @@
     <Content Include="assets\images\product-child-1-4.jpg" />
     <Content Include="assets\images\advertise.jpg" />
     <Content Include="assets\script\detail-product.js" />
+    <Content Include="assets\script\edit-cart.js" />
     <Content Include="Global.asax" />
     <Content Include="pages\addToCart.aspx" />
     <Content Include="pages\cart.aspx" />
     <Content Include="pages\checkout.aspx" />
+    <Content Include="pages\deleted-product-incart.aspx" />
     <Content Include="pages\detail-product.aspx" />
     <Content Include="pages\errorPage\error.html" />
     <Content Include="pages\errorPage\NoAccess.html" />
@@ -2586,6 +2588,13 @@
     </Compile>
     <Compile Include="pages\checkout.aspx.designer.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\deleted-product-incart.aspx.cs">
+      <DependentUpon>deleted-product-incart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\deleted-product-incart.aspx.designer.cs">
+      <DependentUpon>deleted-product-incart.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\detail-product.aspx.cs">
       <DependentUpon>detail-product.aspx</DependentUpon>
