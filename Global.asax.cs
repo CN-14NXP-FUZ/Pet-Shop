@@ -16,6 +16,7 @@ namespace Pet_Shop
         public const string YOUR_CART = "YOUR_CART";
         public const string USER_ID = "USER_ID";
         public const string LIST_PRODUCT  = "LIST_PRODUCT";
+        public const string LIST_COUPON = "LIST_COUPON";
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -45,7 +46,12 @@ namespace Pet_Shop
                 new CartItem("cart-1", new Dictionary<string, int> { { "product-1", 2 } }, "user-ha"),
             };
 
-
+            Application[Global.LIST_COUPON] = new List<Coupon>
+            {
+                new Coupon("CN14EX", "Discount 50% for loyal customer !", 50, DateTime.Now.AddDays(30)),
+                new Coupon("PK45AL", "Discount 10% for loyal customer !", 10, DateTime.Now.AddDays(10)),
+                new Coupon("THDTN", "Discount 20% for loyal customer !", 20, DateTime.Now.AddDays(20)),
+            };
         }
 
         protected void Session_Start(object sender, EventArgs e)

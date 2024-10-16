@@ -144,3 +144,11 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.infor-product-item {
+    display: flex;
+}
+
+.infor-product-item p {
+    margin-left: 10px
+}

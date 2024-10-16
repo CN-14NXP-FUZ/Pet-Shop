@@ -10,6 +10,7 @@ namespace Pet_Shop.model
         private string id;
         private string userId;
         private Dictionary<string, int> listProduct;
+        private Coupon coupon;
        
         public CartItem(string id, Dictionary<string, int> listProduct, string userId )
         {
@@ -42,6 +43,12 @@ namespace Pet_Shop.model
         {
             get { return listProduct; }
             set { listProduct = value; }
+        }
+
+        public Coupon Coupon
+        {
+            get { return coupon; }
+            set { coupon = value; }
         }
     }
 

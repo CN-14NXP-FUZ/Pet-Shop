@@ -44,12 +44,21 @@ namespace Pet_Shop.pages
                         {
                             numOfProduct.InnerHtml = "<p>" + cart.ListProduct.Count() + "</p>";
                             Session[Global.YOUR_CART] = cart;
+                            currCart = cart;
                             break;
                         }
                     }
                 }
             }
             infor_user.InnerHtml = info_curr_user;
+
+
+            // load infor checkout
+            string htmlInfoCheckout = LoadData.LoadInforCheckout(currCart, (Session["CheckoutInfo"] as CheckoutInfo));
+            string htmlInfoProduct = LoadData.LoadProductCheckout(currCart, (List<Product>)Application[Global.LIST_PRODUCT]);
+
+            list_info_checkout.InnerHtml = htmlInfoCheckout;
+            list_product_checkout.InnerHtml = htmlInfoProduct;
         }
     }
 }

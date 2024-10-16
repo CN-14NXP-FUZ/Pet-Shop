@@ -38,8 +38,6 @@
 
             <div id="infor_user" runat="server"></div>
 
-            
-
         </div>
 
         <div class="menu">

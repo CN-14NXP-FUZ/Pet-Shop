@@ -48,15 +48,11 @@ if (listBtnDelete) {
             let productId = btn.getAttribute('data-product-id');
             let quantityInput = (document.querySelector(`input[data-product-id=${productId}]`)).value;
             const listProduct = document.querySelector('.list-product-item');
-            console.log(productId);
-            console.log(quantityInput);
-            console.log(listProduct);
             
             const productRow = Array.from(listProduct.querySelectorAll('tr')).find(row => {
                 return row.getAttribute('data-product-id') === productId;
             });
 
-            console.log(productRow);
             if (productRow) {
                 // Tạo form
                 const form = document.createElement('form');

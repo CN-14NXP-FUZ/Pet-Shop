@@ -46,6 +46,8 @@ namespace Pet_Shop.pages
                         {
                             numOfProduct.InnerHtml = "<p>" + cart.ListProduct.Count() + "</p>";
                             Session[Global.YOUR_CART] = cart;
+                            currCart = cart;
+
                             break;
                         }
                     }
