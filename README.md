@@ -1,22 +1,22 @@
-# Pet-Shop
+# Pet Shop
 
-Function, ultis for web
-login
-logout
-forgot password
-add product to cart
-checkout
-detail order user
-see the process of order
-search product
-product category
+## User Functions
+- Login
+- Logout
+- Forgot Password
+- Add Product to Cart
+- Checkout
+- View Order Details
+- Track Order Status
+- Search Product
+- Browse Product Categories
 
-admin 
-login
-logout
-change logo
-manage product (CRUD)
-manage category (CRUD)
-manage user (CRUD)
-manage account for administration (CRUD)
-decentralization
+## Admin Functions
+- Admin Login
+- Admin Logout
+- Change Logo
+- Manage Products (CRUD)
+- Manage Categories (CRUD)
+- Manage Users (CRUD)
+- Manage Admin Accounts (CRUD)
+- Decentralization
