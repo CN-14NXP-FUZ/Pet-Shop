@@ -40,12 +40,11 @@ namespace Pet_Shop.pages
 
                     foreach (CartItem cart in carts)
                     {
-                        if (cart.UserId == Session[Global.USER_ID])
+                        if (cart.UserId == Session[Global.USER_ID] && cart.WasOrder == false)
                         {
                             numOfProduct.InnerHtml = "<p>" + cart.ListProduct.Count() + "</p>";
                             Session[Global.YOUR_CART] = cart;
                             currCart = cart;
-
                             break;
                         }
                     }
@@ -54,17 +53,14 @@ namespace Pet_Shop.pages
             infor_user.InnerHtml = info_curr_user;
 
 
-            // hiện sản phẩm chi tiết
             string product_id = Request.QueryString["id"];
 
             if (!string.IsNullOrEmpty(product_id))
             {
                 List<Product> products = Application.Get(Global.LIST_PRODUCT) as List<Product>;
 
-                // tìm sản phẩm với ID từ URL
                 Product product = products?.Find(p => p.Id == product_id);
 
-                // nếu sản phẩm không tìm thấy
                 if (product == null)
                 {
                     Response.Redirect("./errorPage/NotFound.html");
@@ -77,7 +73,6 @@ namespace Pet_Shop.pages
             }
             else
             {
-                // nếu product_id không có trong URL
                 Response.Redirect("./errorPage/NotFound.html");
             }
 

@@ -1,5 +1,6 @@
 ﻿using Pet_Shop.model;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -15,6 +16,7 @@ namespace Pet_Shop.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string name = Request.Form["name"];
             string email = Request.Form["email"];
             string phone = Request.Form["phone"];
@@ -24,6 +26,7 @@ namespace Pet_Shop.pages
             string ward = Request.Form["ward"];
             string paymentMethod = Request.Form["paymentMethod"];
 
+            Session["CheckoutInfo"] = new CheckoutInfo(name, email, phone, address, city, district, ward, paymentMethod);
 
             string couponCode = Request.Form["couponCode"];
             List<Coupon> coupons = Application[Global.LIST_COUPON] as List<Coupon>;
@@ -33,10 +36,8 @@ namespace Pet_Shop.pages
             {
                 CartItem cart = Session[Global.YOUR_CART] as CartItem;
                 cart.Coupon = coupon;
-                Session["CheckoutInfo"] = new CheckoutInfo(name, email, phone, address, city, district, ward, paymentMethod);
             }
-
-
+            
             Response.Redirect("checkout.aspx");
         }
     }

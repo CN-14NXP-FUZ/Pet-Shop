@@ -86,7 +86,9 @@ namespace Pet_Shop
             }
             else
             {
-                html = $@"<a href='/user/profile.aspx?id=${id_user}'>{username}</a>
+                html = $@"
+                        <a href='detail-order.aspx?id=${id_user}' style='margin: 0px 18px; font-size: 18px;'>Đơn hàng</a>
+                        <a href='/user/profile.aspx?id=${id_user}' style='padding: 0px 8px;'>{username}</a>
                         <a href='logout.aspx'><i class=""fa-solid fa-arrow-right-from-bracket""></i></a>";
             }
 
@@ -247,7 +249,7 @@ namespace Pet_Shop
             {
 
             }
-            htmlInfo = $@" <form action=""HandleCheckout.aspx"" method=""POST"" class=""checkout-form"">
+            htmlInfo = $@" <form action=""handleMakeAnOrder.aspx"" method=""POST"" class=""checkout-form"">
                     <div class=""form-group"">
                         <input type=""text"" name=""name"" placeholder=""Họ và tên"" required value={currCheckoutInfo.Name}>
                         <input type=""email"" name=""email"" placeholder=""Email"" value={currCheckoutInfo.Email}>
@@ -262,7 +264,6 @@ namespace Pet_Shop
                         <select name=""district"">
                             <option value="""">Quận / huyện</option>
                             <option value={currCheckoutInfo.District}>{currCheckoutInfo.District}</option>
-
                         </select>
                         <select name=""ward"">
                             <option value="""">Phường / xã</option>
@@ -295,20 +296,22 @@ namespace Pet_Shop
 
             public static string LoadProductCheckout(CartItem cart, List<Product> listProduct)
         {
-            string cartItemHtml = "";
-            double totalPrice = 0;
-            double couponDiscount = 0;
+                string cartItemHtml = "";
+                double totalPrice = 0;
+                double couponDiscount = 0;
 
-            Dictionary<string, int> list = cart.ListProduct;
-            foreach (KeyValuePair<string, int> item in list)
-            {
-                foreach (Product product in listProduct)
+                Dictionary<string, int> list = cart.ListProduct;
+                if (list != null)
                 {
-                    if (product.Id == item.Key)
+                    foreach (KeyValuePair<string, int> item in list)
                     {
-                        double newPrice = Convert.ToDouble(product.Price) * (1.00 - product.Discount / 100.0);
-                        totalPrice += newPrice * item.Value;
-                        cartItemHtml += $@"<div class=""cart-item"">
+                        foreach (Product product in listProduct)
+                        {
+                            if (product.Id == item.Key)
+                            {
+                                double newPrice = Convert.ToDouble(product.Price) * (1.00 - product.Discount / 100.0);
+                                totalPrice += newPrice * item.Value;
+                                cartItemHtml += $@"<div class=""cart-item"">
                             <div class='infor-product-item' style='display: flex'>
                                 <img src='{product.ImageUrl}'>
                                 <div>
@@ -318,19 +321,21 @@ namespace Pet_Shop
                             </div>
                             <span>{newPrice.ToString("N0")}đ</span>
                            </div>";
-                    }
+                            }
+                        }
+                    };
                 }
-            };
-            double finalPrice = 0;
-            string htmlCoupon = "";
-            if (cart.Coupon != null && cart.Coupon.Discount > 0)
-            {
-                htmlCoupon = $@"<p>Mã giảm giá giảm: <span>{cart.Coupon.Discount}% - {(totalPrice - finalPrice).ToString("N0")} đ</span></p>";
-                finalPrice = totalPrice * (1- cart.Coupon.Discount / 100);
-            }
-            
+                double finalPrice = 0;
+                string htmlCoupon = "";
+                if (cart.Coupon != null && cart.Coupon.Discount > 0)
+                {
+                    finalPrice = totalPrice * (1 - (double)cart.Coupon.Discount / 100);
+                    double priceDiscount = totalPrice - finalPrice; 
+                    htmlCoupon = $@"<p>Mã giảm giá giảm: <span>{cart.Coupon.Discount}% - {(priceDiscount).ToString("N0")}đ</span></p>";
+                }
 
-            string htmlCheckout = $@"
+
+                string htmlCheckout = $@"
                 <h3>Giỏ hàng</h3>
                 <div class=""cart-items"">
                    {cartItemHtml}
@@ -342,7 +347,6 @@ namespace Pet_Shop
                         <button id='use-coupon-btn'>Sử dụng</button>
                     </div>
                     
-
                     <div class=""summary-detail"">
                         <p>Tạm tính: <span>{totalPrice.ToString("N0")}đ</span></p>
                         {htmlCoupon}
@@ -354,6 +358,7 @@ namespace Pet_Shop
                     </div>
                 </div>";
             return htmlCheckout;
+            
         }
     }
 }

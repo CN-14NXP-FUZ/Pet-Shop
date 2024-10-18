@@ -41,12 +41,11 @@ namespace Pet_Shop.pages
 
                     foreach (CartItem cart in carts)
                     {
-                        if (cart.UserId == Session[Global.USER_ID])
+                        if (cart.UserId == Session[Global.USER_ID] && cart.WasOrder == false)
                         {
                             numOfProduct.InnerHtml = "<p>" + cart.ListProduct.Count() + "</p>";
                             Session[Global.YOUR_CART] = cart;
                             currCart = cart;
-
                             break;
                         }
                     }

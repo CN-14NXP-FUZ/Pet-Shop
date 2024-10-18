@@ -10,13 +10,15 @@ namespace Pet_Shop.model
         private string id;
         private string userId;
         private Dictionary<string, int> listProduct;
+        private bool wasOrder = false;
         private Coupon coupon;
        
-        public CartItem(string id, Dictionary<string, int> listProduct, string userId )
+        public CartItem(string id, Dictionary<string, int> listProduct, string userId)
         {
             this.id = id;
             this.listProduct = listProduct;
             this.userId = userId;
+            this.wasOrder = wasOrder;
         }
         public CartItem(string id, Dictionary<string, int> listProduct)
         {
@@ -49,6 +51,12 @@ namespace Pet_Shop.model
         {
             get { return coupon; }
             set { coupon = value; }
+        }
+
+        public bool WasOrder
+        {
+            get { return wasOrder; }
+            set { wasOrder = value; }
         }
     }
 

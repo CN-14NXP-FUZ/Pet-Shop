@@ -24,9 +24,10 @@ if (btnUsingCoupon) {
             { name: 'city', value: city },
             { name: 'district', value: district },
             { name: 'ward', value: ward },
-            { name: 'payment', value: paymentMethod },
+            { name: 'paymentMethod', value: paymentMethod },
             { name: 'couponCode', value: couponCode } 
         ];
+
 
         inputs.forEach(input => {
             const hiddenInput = document.createElement('input');

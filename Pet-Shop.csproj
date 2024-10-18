@@ -73,6 +73,7 @@
     <Content Include="assets\css\checkout.css" />
     <Content Include="assets\css\checkout.html" />
     <Content Include="assets\css\click-menu.js" />
+    <Content Include="assets\css\detail-order.css" />
     <Content Include="assets\css\detail-product.css" />
     <Content Include="assets\css\detail-product.html" />
     <Content Include="assets\css\index.css" />
@@ -2546,11 +2547,13 @@
     <Content Include="pages\cart.aspx" />
     <Content Include="pages\checkout.aspx" />
     <Content Include="pages\deleted-product-incart.aspx" />
+    <Content Include="pages\detail-order.aspx" />
     <Content Include="pages\detail-product.aspx" />
     <Content Include="pages\errorPage\error.html" />
     <Content Include="pages\errorPage\NoAccess.html" />
     <Content Include="pages\errorPage\NotFound.html" />
     <Content Include="pages\forgot-password.aspx" />
+    <Content Include="pages\handleMakeAnOrder.aspx" />
     <Content Include="pages\handleUsingCoupon.aspx" />
     <Content Include="pages\index.aspx" />
     <Content Include="pages\login.aspx" />
@@ -2563,6 +2566,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoadData.cs" />
+    <Compile Include="LoadOrder.cs" />
     <Compile Include="model\CartItem.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="model\CheckoutInfo.cs" />
@@ -2600,6 +2604,13 @@
     <Compile Include="pages\deleted-product-incart.aspx.designer.cs">
       <DependentUpon>deleted-product-incart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\detail-order.aspx.cs">
+      <DependentUpon>detail-order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\detail-order.aspx.designer.cs">
+      <DependentUpon>detail-order.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\detail-product.aspx.cs">
       <DependentUpon>detail-product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2613,6 +2624,13 @@
     </Compile>
     <Compile Include="pages\forgot-password.aspx.designer.cs">
       <DependentUpon>forgot-password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\handleMakeAnOrder.aspx.cs">
+      <DependentUpon>handleMakeAnOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\handleMakeAnOrder.aspx.designer.cs">
+      <DependentUpon>handleMakeAnOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\handleUsingCoupon.aspx.cs">
       <DependentUpon>handleUsingCoupon.aspx</DependentUpon>

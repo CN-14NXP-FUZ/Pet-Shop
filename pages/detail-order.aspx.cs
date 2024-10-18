@@ -8,20 +8,28 @@ using System.Web.UI.WebControls;
 
 namespace Pet_Shop.pages
 {
-    public partial class checkout : System.Web.UI.Page
+    public partial class detail_order : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             //số lượng sản phẩm trong giỏ hàng
             List<CartItem> carts = (List<CartItem>)Application[Global.LIST_CART];
             int currNum = 0;
             CartItem currCart = (Session[Global.YOUR_CART] as CartItem);
 
             numOfProduct.InnerHtml = "<p>" + 0 + "</p>";
-            if (currCart.ListProduct != null && currCart.ListProduct.Count != 0)
+            if (currCart != null)
             {
-                numOfProduct.InnerHtml = "<p>" + currCart.ListProduct.Count() + "</p>";
+                if (currCart.ListProduct != null && currCart.ListProduct.Count != 0)
+                {
+                    numOfProduct.InnerHtml = "<p>" + currCart.ListProduct.Count() + "</p>";
+                }
+            }else
+            {
+                Session[Global.YOUR_CART] = new CartItem("cart-" + (Application[Global.LIST_CART] as List<CartItem>).Count());
             }
+            
 
 
             // giao diện khi đã đăng nhập và chưa đăng nhập
@@ -53,12 +61,24 @@ namespace Pet_Shop.pages
             infor_user.InnerHtml = info_curr_user;
 
 
-            // load infor checkout
-            string htmlInfoCheckout = LoadData.LoadInforCheckout(currCart, (Session["CheckoutInfo"] as CheckoutInfo));
-            string htmlInfoProduct = LoadData.LoadProductCheckout(currCart, (List<Product>)Application[Global.LIST_PRODUCT]);
 
-            list_info_checkout.InnerHtml = htmlInfoCheckout;
-            list_product_checkout.InnerHtml = htmlInfoProduct;
+            if (Session[Global.USER_ID] != null && Session[Global.USER_ID].ToString() != "")
+            {
+                string userId = Session[Global.USER_ID].ToString();
+                List<Order> orders = (List<Order>)Application[Global.LIST_ORDER];
+
+                if (orders != null)
+                {
+                    List<Order> userOrders = orders.Where(o => o.UserId == userId).ToList();
+
+                    string htmlOrder = LoadOrder.LoadOrderDetail(
+                        userOrders,
+                        Application[Global.LIST_PRODUCT] as List<Product>,
+                        Application[Global.LIST_CART] as List<CartItem>);
+
+                    list_info_order.InnerHtml = htmlOrder;
+                }
+            }
         }
     }
 }

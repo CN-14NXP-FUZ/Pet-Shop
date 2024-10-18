@@ -17,6 +17,7 @@ namespace Pet_Shop
         public const string USER_ID = "USER_ID";
         public const string LIST_PRODUCT  = "LIST_PRODUCT";
         public const string LIST_COUPON = "LIST_COUPON";
+        public const string LIST_ORDER = "LIST_ORDER";
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -52,6 +53,13 @@ namespace Pet_Shop
                 new Coupon("PK45AL", "Discount 10% for loyal customer !", 10, DateTime.Now.AddDays(10)),
                 new Coupon("THDTN", "Discount 20% for loyal customer !", 20, DateTime.Now.AddDays(20)),
             };
+            Application[Global.LIST_ORDER] = new List<Order>
+            {
+                new Order("order-item-1","user-ha", "cart-1","pending", "online", DateTime.Now, new CheckoutInfo(
+                    "Nguyễn Chính", "chinh14@gmail.com", "0123456789","Ngõ 245", "Hà Nội", "Ba Đình", "Ngọc Khánh", "online"
+                )),
+            };
+
         }
 
         protected void Session_Start(object sender, EventArgs e)

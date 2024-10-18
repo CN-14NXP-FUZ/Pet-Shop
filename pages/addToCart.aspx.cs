@@ -15,6 +15,11 @@ namespace Pet_Shop.pages
             string productId = Request.Form["id"];
             int quantity = int.Parse(Request.Form["quantity"]);
             List<Product> products = Application[Global.LIST_PRODUCT] as List<Product>;
+            CartItem cartItem = (Session[Global.YOUR_CART] as CartItem);
+            if (cartItem.WasOrder)
+            {
+                cartItem = new CartItem("cart-" + ((Application[Global.LIST_CART] as List<CartItem>).Count + 1));
+            }
             int maxQuantity = 0;
             foreach (Product product in products)
             {
@@ -23,7 +28,7 @@ namespace Pet_Shop.pages
                     maxQuantity = product.Stock;
                     if (quantity > 0 && quantity <= maxQuantity)
                     {
-                        Dictionary<string, int> listPro = (Session[Global.YOUR_CART] as CartItem).ListProduct as Dictionary<string, int>;
+                        Dictionary<string, int> listPro = cartItem.ListProduct as Dictionary<string, int>;
                         if (listPro == null)
                         {
                             listPro = new Dictionary<string, int>();

@@ -5,7 +5,7 @@ if (btnAddToCart) {
         // Lấy thông tin sản phẩm
         const productId = document.getElementById("product-id").innerText.trim();
         const quantityInput = document.querySelector("#quantity-product");
-        const quantity = quantityInput ? quantityInput.value : 1; 
+        const quantity = quantityInput ? quantityInput.value : 1;
 
         console.log(productId, quantity);
 
@@ -39,7 +39,7 @@ const increaseButton = document.querySelector('.quantity-btn-increase');
 if (decreaseButton) {
     decreaseButton.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
-        if (currentValue > 1) { 
+        if (currentValue > 1) {
             currentValue--;
             quantityInput.value = currentValue;
         }
@@ -49,7 +49,7 @@ if (decreaseButton) {
 if (increaseButton) {
     increaseButton.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
-        const max = parseInt(quantityInput.max); 
+        const max = parseInt(quantityInput.max);
 
         if (currentValue < max) {
             currentValue++;
