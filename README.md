@@ -10,7 +10,7 @@
 - Track Order Status
 - Search Product
 - Browse Product Categories
-
+- Infor User
 ## Admin Functions
 - Admin Login
 - Admin Logout
