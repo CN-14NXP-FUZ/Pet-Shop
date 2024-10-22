@@ -1,0 +1,365 @@
+body {
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+input {
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+p {
+    margin: 0;
+}
+header {
+    position: relative;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+.menu {
+    position: absolute;  
+    bottom: -280px;        
+    left: 0;          
+    width: 100%;     
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+    display: none;   
+    z-index: 1000;    
+}
+
+
+.menu.active {
+    display: flex;     /* Show menu when active */
+}
+
+.btn-menu {
+    border: none;
+    background-color: transparent;
+}
+.menu-bar {
+    display: flex;
+    margin-right: 10px;
+    font-size: 18px;
+    align-items: center;
+}
+.menu-bar p {
+    margin-left: 10px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.box-search {
+    flex: 1;
+    display: flex;
+    flex-direction: end;
+}
+.logo {
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-search {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    padding: 8px 10px;
+}
+
+.search i {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login a {
+    margin: 0 10px;
+    color: #000;
+    font-size: 20px;
+}
+
+.cart {
+    margin-right: 10px;
+    position: relative;
+}
+.cart .quantity-product-cart {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: #d05555;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 10px;
+}
+
+
+    .category {
+        margin-bottom: 20px;
+    }
+.category a {
+    text-decoration: none;
+    padding: 4px 5px;
+    font-size:  18px;
+    border: 1px solid #d05555;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #764e4e;
+}
+
+.bg-advertise {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+
+.title-section  {
+    margin: 30px 0 ;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: #d05555;
+    color: white;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.list-product {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default for small screens */
+    gap: 18px;
+  }
+
+.inner-item {
+    padding: 8px;
+}
+
+.item {
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+}
+  
+  .item img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+  }
+  
+  .item p {
+    margin: 10px 0;
+  }
+  
+  .item a {
+    width: 100%;
+    background-color: #ff6433;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item button i {
+    margin-right: 5px;
+  }
+  .item .price {
+    display: flex;
+  }
+  .item .newPrice {
+    margin-right: 10px;
+  }
+  .item .oldPrice {
+    text-decoration: line-through;
+    color: #999;
+  }
+  .item .btn-buy {
+    width: 100%;
+    border-radius: 10px;
+  }
+  @media (min-width: 768px) {
+    .list-product {
+      grid-template-columns: repeat(2, 1fr); /* 2 items for medium screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .list-product {
+      grid-template-columns: repeat(4, 1fr); /* 3 items for large screens */
+    }
+  }
+  
+
+  .thumb-bottom {
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #c1bebe;
+  }
+  .thumb-bottom img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+  /* General styling for the articles */
+.more-article {
+    padding: 10px;
+  }
+  
+  .inner-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default to 1 column for mobile */
+    gap: 10px;
+  }
+  
+  .inner-item {
+    padding: 10px;
+    display: flex;
+    border: 1px solid #b6b5b5;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .inner-item img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .info-item {
+    padding: 10px;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .date-article {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  /* Responsive: 2 columns for medium screens */
+  @media (min-width: 768px) {
+    .inner-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Responsive: 3 columns for larger screens */
+  @media (min-width: 1024px) {
+    .inner-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+
+  /* Footer styles */
+.footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .inner-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-left, .footer-right {
+    flex: 1;
+    display: flex;
+    margin: 10px;
+  }
+  
+  .logo img {
+    width: 80px; /* Adjust based on your logo size */
+  }
+  .contact  {
+    flex: 1;
+  }
+  .contact p {
+    margin: 5px 0;
+  }
+  
+  .social a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .payment img {
+    max-width: 100px; /* Adjust the size of the payment logos */
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 768px) {
+    .inner-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .footer-right, .footer-left {
+      width: 100%;
+      text-align: left;
+      margin: 10px 0;
+    }
+  
+    .social {
+      margin-top: 10px;
+    }
+  }
+  

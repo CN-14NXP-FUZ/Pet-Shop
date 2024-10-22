@@ -67,11 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-=======
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\cart.css" />
@@ -2570,12 +2565,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoadData.cs" />
     <Compile Include="LoadOrder.cs" />
+
     <Compile Include="model\Admin.cs" />
+
     <Compile Include="model\CartItem.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="model\CheckoutInfo.cs" />
@@ -2592,6 +2590,7 @@
     <Compile Include="pages\addToCart.aspx.designer.cs">
       <DependentUpon>addToCart.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="pages\admin.aspx.cs">
       <DependentUpon>admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2599,6 +2598,7 @@
     <Compile Include="pages\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="pages\cart.aspx.cs">
       <DependentUpon>cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2683,10 +2683,79 @@
     <Compile Include="pages\register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
->>>>>>> 0c19af6 (add function admin(user, product))
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\brands.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\fontawesome.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\regular.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\solid.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\v4-shims.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_animated.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_bordered-pulled.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_core.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_fixed-width.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_icons.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_list.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_mixins.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_rotated-flipped.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_screen-reader.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_shims.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_sizing.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_stacked.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\less\_variables.less" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\categories.yml" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\icon-families.json" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\icon-families.yml" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\icons.json" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\icons.yml" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\shims.json" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\shims.yml" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\metadata\sponsors.yml" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\brands.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\fontawesome.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\regular.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\solid.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\v4-shims.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_animated.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_bordered-pulled.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_core.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_fixed-width.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_functions.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_icons.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_list.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_mixins.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_rotated-flipped.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_screen-reader.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_shims.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_sizing.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_stacked.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\scss\_variables.scss" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="assets\font\fontawesome-free-6.5.2-web\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="assets\font\themify-icons\fonts\themify.eot" />
+    <Content Include="assets\font\themify-icons\fonts\themify.ttf" />
+    <Content Include="assets\font\themify-icons\fonts\themify.woff" />
+    <Content Include="assets\font\themify-icons\Themify IconFonts 5-23-2014.json" />
+    <Content Include="assets\images\product-1.webp" />
+    <Content Include="assets\images\product-2.webp" />
+    <Content Include="assets\images\product-3.webp" />
+    <Content Include="assets\images\product-4.webp" />
+    <Content Include="assets\images\product-5.webp" />
+    <Content Include="assets\images\product-6.webp" />
+    <Content Include="assets\images\product-7.webp" />
+    <Content Include="assets\images\product-9.webp" />
+    <Content Include="assets\images\product-child-1-1.webp" />
+    <Content Include="assets\images\product-child-1-2.webp" />
+    <Content Include="assets\images\product-child-1-3.webp" />
+    <Content Include="assets\images\product-child-1-4.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2695,6 +2764,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

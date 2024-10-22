@@ -18,7 +18,9 @@ namespace Pet_Shop
         public const string LIST_PRODUCT  = "LIST_PRODUCT";
         public const string LIST_COUPON = "LIST_COUPON";
         public const string LIST_ORDER = "LIST_ORDER";
+
         public const string ADMIN = "ADMIN";
+
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -60,11 +62,13 @@ namespace Pet_Shop
                     "Nguyễn Chính", "chinh14@gmail.com", "0123456789","Ngõ 245", "Hà Nội", "Ba Đình", "Ngọc Khánh", "online"
                 )),
             };
+
             Application[Global.ADMIN] = new List<Admin>
             {
                 new Admin("admin", "admin"),
                 new Admin("dominhquan", "quan"),
             };
+
         }
 
         protected void Session_Start(object sender, EventArgs e)

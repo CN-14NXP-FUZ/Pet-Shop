@@ -1,0 +1,92 @@
+﻿/* Order Item Styles */
+.order-item {
+    margin: 20px 0px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .order-head .title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .order-head a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .order-head a:hover {
+            text-decoration: underline;
+        }
+
+table {
+    table-layout: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+}
+
+    .product img {
+        width: 50px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-name {
+    margin: 0;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .order-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .product img {
+        width: 40px; 
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+}
