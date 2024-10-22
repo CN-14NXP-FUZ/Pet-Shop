@@ -19,6 +19,9 @@ namespace Pet_Shop
         public const string LIST_COUPON = "LIST_COUPON";
         public const string LIST_ORDER = "LIST_ORDER";
 
+        public const string ADMIN = "ADMIN";
+
+
         protected void Application_Start(object sender, EventArgs e)
         {
             Application[Global.LIST_USER] = new List<User>
@@ -58,6 +61,12 @@ namespace Pet_Shop
                 new Order("order-item-1","user-ha", "cart-1","pending", "online", DateTime.Now, new CheckoutInfo(
                     "Nguyễn Chính", "chinh14@gmail.com", "0123456789","Ngõ 245", "Hà Nội", "Ba Đình", "Ngọc Khánh", "online"
                 )),
+            };
+
+            Application[Global.ADMIN] = new List<Admin>
+            {
+                new Admin("admin", "admin"),
+                new Admin("dominhquan", "quan"),
             };
 
         }

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\cart.css" />
     <Content Include="assets\css\cart.html" />
@@ -2542,8 +2543,10 @@
     <Content Include="assets\script\checkout.js" />
     <Content Include="assets\script\detail-product.js" />
     <Content Include="assets\script\edit-cart.js" />
+    <Content Include="assets\script\edit-product.js" />
     <Content Include="Global.asax" />
     <Content Include="pages\addToCart.aspx" />
+    <Content Include="pages\admin.aspx" />
     <Content Include="pages\cart.aspx" />
     <Content Include="pages\checkout.aspx" />
     <Content Include="pages\deleted-product-incart.aspx" />
@@ -2562,11 +2565,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoadData.cs" />
     <Compile Include="LoadOrder.cs" />
+
+    <Compile Include="model\Admin.cs" />
+
     <Compile Include="model\CartItem.cs" />
     <Compile Include="model\Category.cs" />
     <Compile Include="model\CheckoutInfo.cs" />
@@ -2583,6 +2590,15 @@
     <Compile Include="pages\addToCart.aspx.designer.cs">
       <DependentUpon>addToCart.aspx</DependentUpon>
     </Compile>
+
+    <Compile Include="pages\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+
     <Compile Include="pages\cart.aspx.cs">
       <DependentUpon>cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2667,6 +2683,7 @@
     <Compile Include="pages\register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

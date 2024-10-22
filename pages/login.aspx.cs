@@ -14,6 +14,9 @@ namespace Pet_Shop.pages
         {
             
             List<User> users = (List<User>)Application[Global.LIST_USER];
+
+            List<Admin> admins = (List<Admin>)Application[Global.ADMIN];
+
             //số lượng sản phẩm trong giỏ hàng
             List<CartItem> carts = (List<CartItem>)Application[Global.LIST_CART];
             int currNum = 0;
@@ -75,6 +78,21 @@ namespace Pet_Shop.pages
                             break;
                         }
                     }
+
+                    foreach (Admin admin in admins)
+                    {
+                        string em = admin.Username;
+                        string pas = admin.Password;
+                        if (admin.Username == username && admin.Password == password)
+                        {
+                            notfound = false;
+                            Session[Global.USER_NAME] = admin.Username;
+                            Session[Global.USER_ID] = admin.Password;
+                            Response.Redirect("admin.aspx");
+                            break;
+                        }
+                    }
+
                     if (notfound)
                     {
                         login_error.InnerHtml = $@"<p style='color:red; margin-bottom: 10px; text-align: center'>Sai tên đăng nhập hoặc mật khẩu</p>";
